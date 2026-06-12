@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+    padding: 0;
+      box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            display: flex;
+              justify-content: center;
+                align-items: center;
+                  min-height: 100vh;
+                    direction: rtl;
+                    }
+
+                    .chat-container {
+                      width: 420px;
+                        max-width: 95vw;
+                          background: #ffffff;
+                            border-radius: 20px;
+                              box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+                                overflow: hidden;
+                                  display: flex;
+                                    flex-direction: column;
+                                      height: 600px;
+                                      }
+
+                                      .chat-header {
+                                        background: linear-gradient(135deg, #2e7d32, #43a047);
+                                          color: white;
+                                            padding: 20px;
+                                              text-align: center;
+                                              }
+
+                                              .chat-header h2 {
+                                                font-size: 1.4rem;
+                                                  margin-bottom: 5px;
+                                                  }
+
+                                                  .chat-header p {
+                                                    font-size: 0.85rem;
+                                                      opacity: 0.85;
+                                                      }
+
+                                                      .chat-messages {
+                                                        flex: 1;
+                                                          overflow-y: auto;
+                                                            padding: 15px;
+                                                              display: flex;
+                                                                flex-direction: column;
+                                                                  gap: 12px;
+                                                                    background: #f9fbe7;
+                                                                    }
+
+                                                                    .message {
+                                                                      display: flex;
+                                                                        max-width: 85%;
+                                                                        }
+
+                                                                        .bot-message {
+                                                                          align-self: flex-start;
+                                                                          }
+
+                                                                          .user-message {
+                                                                            align-self: flex-end;
+                                                                              flex-direction: row-reverse;
+                                                                              }
+
+                                                                              .message-bubble {
+                                                                                padding: 10px 15px;
+                                                                                  border-radius: 18px;
+                                                                                    font-size: 0.92rem;
+                                                                                      line-height: 1.5;
+                                                                                      }
+
+                                                                                      .bot-message .message-bubble {
+                                                                                        background: #e8f5e9;
+                                                                                          color: #1b5e20;
+                                                                                            border-bottom-right-radius: 4px;
+                                                                                            }
+
+                                                                                            .user-message .message-bubble {
+                                                                                              background: #2e7d32;
+                                                                                                color: white;
+                                                                                                  border-bottom-left-radius: 4px;
+                                                                                                  }
+
+                                                                                                  .chat-input {
+                                                                                                    display: flex;
+                                                                                                      padding: 12px;
+                                                                                                        background: #fff;
+                                                                                                          border-top: 1px solid #e0e0e0;
+                                                                                                            gap: 8px;
+                                                                                                            }
+                                                                                                            
+                                                                                                            .chat-input input {
+                                                                                                              flex: 1;
+                                                                                                                padding: 10px 15px;
+                                                                                                                  border: 2px solid #a5d6a7;
+                                                                                                                    border-radius: 25px;
+                                                                                                                      font-size: 0.92rem;
+                                                                                                                        outline: none;
+                                                                                                                          font-family: inherit;
+                                                                                                                            direction: rtl;
+                                                                                                                              transition: border-color 0.3s;
+                                                                                                                              }
+                                                                                                                              
+                                                                                                                              .chat-input input:focus {
+                                                                                                                                border-color: #2e7d32;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                .chat-input button {
+                                                                                                                                  padding: 10px 20px;
+                                                                                                                                    background: #2e7d32;
+                                                                                                                                      color: white;
+                                                                                                                                        border: none;
+                                                                                                                                          border-radius: 25px;
+                                                                                                                                            cursor: pointer;
+                                                                                                                                              font-size: 0.92rem;
+                                                                                                                                                font-family: inherit;
+                                                                                                                                                  transition: background 0.3s;
+                                                                                                                                                  }
+                                                                                                                                                  
+                                                                                                                                                  .chat-input button:hover {
+                                                                                                                                                    background: #1b5e20;
+                                                                                                                                                    }
+                                                                                                                                                    
+                                                                                                                                                    .typing-indicator {
+                                                                                                                                                      display: flex;
+                                                                                                                                                        gap: 5px;
+                                                                                                                                                          padding: 10px 15px;
+                                                                                                                                                            background: #e8f5e9;
+                                                                                                                                                              border-radius: 18px;
+                                                                                                                                                                border-bottom-right-radius: 4px;
+                                                                                                                                                                  width: fit-content;
+                                                                                                                                                                  }
+                                                                                                                                                                  
+                                                                                                                                                                  .typing-indicator span {
+                                                                                                                                                                    width: 8px;
+                                                                                                                                                                      height: 8px;
+                                                                                                                                                                        background: #2e7d32;
+                                                                                                                                                                          border-radius: 50%;
+                                                                                                                                                                            animation: bounce 1.2s infinite;
+                                                                                                                                                                            }
+                                                                                                                                                                            
+                                                                                                                                                                            .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+                                                                                                                                                                            .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+                                                                                                                                                                            
+                                                                                                                                                                            @keyframes bounce {
+                                                                                                                                                                              0%, 60%, 100% { transform: translateY(0); }
+                                                                                                                                                                                30% { transform: translateY(-8px); }
+                                                                                                                                                                                }
